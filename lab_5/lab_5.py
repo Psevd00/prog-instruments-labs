@@ -476,8 +476,9 @@ def regionDistrictAnalysis(df, region=None, district=None, theme=None):
             "stats": stats,
         }
 
+
     except Exception as e:
-        print(f"Ошибка в regionDistrictAnalysis: {e}")
+        logger.error("Ошибка в regionDistrictAnalysis: %s", str(e), exc_info=True)
         return {
             "error": str(e),
             "table": [],
